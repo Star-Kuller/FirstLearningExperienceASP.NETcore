@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="ru">
+<head>
+    <title>Вход в систему</title>
+</head>
+<body>
+<form action="/login" method="POST">
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <table>
+            <tr>
+                <th>Логин:</th>
+                <th><label>
+                    <input type="text" name="username">
+                </label></th>
+            </tr>
+            <tr>
+                <td>Пароль:</td>
+                <td><label>
+                    <input type="password" name="password">
+                </label></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="text-align: right;"><button type="submit">Войти</button></td>
+            </tr>
+        </table>
+    </div>
+</form>
+</body>
+</html>
