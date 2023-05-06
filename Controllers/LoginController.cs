@@ -14,12 +14,10 @@ public class LoginController : ControllerBase
     }
     
     [HttpPost]
-    public IActionResult Post()
+    public async Task<IActionResult> Post([FromForm] string username, [FromForm] string password)
     {
-        var username = Request.Form["username"];
-        var password = Request.Form["password"];
         var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Wellcum.html");
-        string html = System.IO.File.ReadAllText(filePath);
+        string html = await System.IO.File.ReadAllTextAsync(filePath);
         html = html.Replace("{username}", username);
         html = html.Replace("{password}", password);
         return Content(html, "text/html");
